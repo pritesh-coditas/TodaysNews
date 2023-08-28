@@ -1,4 +1,4 @@
-package com.example.weatherapp.di
+package com.example.todaysnews.di
 
 import com.example.todaysnews.api.NewsAPI
 import com.example.todaysnews.utils.Constants
@@ -18,14 +18,12 @@ object AppModule {
     @Provides
     fun getBaseUrl(): String = Constants.BASE_URL
 
-
     @Singleton
     @Provides
     fun getRetrofit(baseUrl:String): Retrofit =  Retrofit.Builder()
         .baseUrl(baseUrl)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-
 
     @Singleton
     @Provides
