@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.lifecycle.*
 import com.example.todaysnews.model.ArticleResponse
 import com.example.todaysnews.repositories.ApiRepository
-import com.example.newsapp.utils.Resource
+import com.example.todaysnews.utils.Resource
 import kotlinx.coroutines.launch
 import dagger.hilt.android.lifecycle.HiltViewModel
 import java.lang.Exception

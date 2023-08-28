@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.MainActivity">
-    <?xml version="1.0" encoding="utf-8"?>
 
     <LinearLayout
-        android:id="@+id/articelLinearLayout"
+        android:id="@+id/articleLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -22,7 +21,7 @@
 
         <TextView
             android:id="@+id/articleTitle"
-            android:text="@string/articel_title"
+            android:text="@string/article_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"
@@ -39,7 +38,7 @@
 
         <TextView
             android:id="@+id/articleDescription"
-            android:text="@string/articel_description"
+            android:text="@string/article_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
@@ -55,7 +54,7 @@
 
         <TextView
             android:id="@+id/articleContent"
-            android:text="@string/articel_content"
+            android:text="@string/article_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"

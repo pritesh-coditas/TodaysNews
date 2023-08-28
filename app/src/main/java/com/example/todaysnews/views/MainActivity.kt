@@ -2,12 +2,15 @@ package com.example.todaysnews.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.todaysnews.R
-import com.example.newsapp.utils.Resource
+import com.example.todaysnews.utils.Resource
 import com.example.todaysnews.databinding.ActivityMainBinding
+import com.example.todaysnews.model.Source
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.logging.Logger
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -35,12 +38,16 @@ class MainActivity : AppCompatActivity() {
                     is Resource.Success -> {
                         Toast.makeText(this, "news fetched!!!!", Toast.LENGTH_LONG).show()
 
-                        response.data?.let {
-                            /*      binding.articleTitle.text = getString(R.string.articel_title)
-                                  binding.articleAuthor.text = getString(R.string.author)
-                                  binding.articleDescription.text = getString(R.string.articel_description)
-                                  binding.articlePublishedAt.text = getString(R.string.publish_date)
-                                  binding.articleContent.text = getString(R.string.articel_content)*/
+                        response.data?.articles.let {
+                            val article = it?.get(0)
+                            Log.d("Response", "$it")
+                            binding.articleTitle.text = article?.title
+                            binding.articleAuthor.text = article?.author
+                            binding.articleDescription.text =
+                                article?.description
+                            binding.articlePublishedAt.text = article?.publishedAt
+                            binding.articleContent.text = article?.content
+
                         }
                     }
 
