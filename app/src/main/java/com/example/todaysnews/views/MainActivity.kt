@@ -5,18 +5,15 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
-import com.example.todaysnews.R
 import com.example.todaysnews.utils.Resource
 import com.example.todaysnews.databinding.ActivityMainBinding
-import com.example.todaysnews.model.Source
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.logging.Logger
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val weatherDetailsViewModel: NewsDetailViewModel by viewModels()
+    private val newsDetailViewModel: NewsDetailViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -28,7 +25,7 @@ class MainActivity : AppCompatActivity() {
      * It will get news info.
      */
     private fun getNews() {
-        weatherDetailsViewModel.getWeather()
+        newsDetailViewModel.getWeather()
             .observe(this) { response ->
                 when (response) {
                     is Resource.Loading -> {

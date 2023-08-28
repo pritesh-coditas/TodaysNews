@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface  NewsAPI {
 
-    @GET("/")
-    suspend fun getTodaysNews(): Response<ArticleResponse>
+    @GET("top-headlines?sources=techcrunch&apiKey=ffc9e7511b8a414a8ee32104c4830a56")
+    suspend fun getCurrentNews(): Response<ArticleResponse>
 
 }

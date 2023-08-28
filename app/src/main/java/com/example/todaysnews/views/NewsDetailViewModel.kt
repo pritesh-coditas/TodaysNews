@@ -20,9 +20,9 @@ class NewsDetailViewModel @Inject constructor (private val apiRepository: ApiRep
         viewModelScope.launch {
             _newsDetailsLiveData.postValue(Resource.Loading())
             try {
-                val productList = apiRepository.getNewsList()
-                if (productList.body() != null) {
-                    _newsDetailsLiveData.postValue(Resource.Success(productList.body()))
+                val newsList = apiRepository.getNews()
+                if (newsList.body() != null) {
+                    _newsDetailsLiveData.postValue(Resource.Success(newsList.body()))
                 }
             } catch (e: Exception) {
                 Log.d(TAG, "getNews: ${e.printStackTrace()}")
