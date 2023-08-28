@@ -3,8 +3,8 @@ package com.example.weatherapp.views
 import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.*
-import com.example.weatherapp.model.WeatherResponse
-import com.example.weatherapp.repositories.ApiRepository
+import com.example.weatherapp.model.NewsResponse
+import com.example.todaysnews.repositories.ApiRepository
 import com.example.weatherapp.utils.Resource
 import kotlinx.coroutines.launch
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,9 +14,9 @@ import javax.inject.Inject
 @HiltViewModel
 class WeatherDeatilsViewModel @Inject constructor (private val apiRepository: ApiRepository) :
     ViewModel() {
-    private val _weatherDetailsLiveData = MutableLiveData<Resource<WeatherResponse>>()
-    private val weatherDetailsLiveData: LiveData<Resource<WeatherResponse>> = _weatherDetailsLiveData
-    fun getWeather(accessKey:String,query:String): LiveData<Resource<WeatherResponse>> {
+    private val _weatherDetailsLiveData = MutableLiveData<Resource<NewsResponse>>()
+    private val weatherDetailsLiveData: LiveData<Resource<NewsResponse>> = _weatherDetailsLiveData
+    fun getWeather(accessKey:String,query:String): LiveData<Resource<NewsResponse>> {
         viewModelScope.launch {
             _weatherDetailsLiveData.postValue(Resource.Loading())
             try {

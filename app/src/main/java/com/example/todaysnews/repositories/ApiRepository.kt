@@ -1,11 +1,8 @@
-package com.example.weatherapp.repositories
+package com.example.todaysnews.repositories
 
-import com.example.weatherapp.api.WeatherAPI
+import com.example.todaysnews.api.NewsAPI
 import javax.inject.Inject
 
-class ApiRepository @Inject constructor (private val weatherAPI: WeatherAPI) {
-    suspend fun getProductList(accessKey: String,query:String) = weatherAPI.getCurrentLocationWeather(accessKey,query)
-//    suspend fun getCategoryList() = fakeStoreAPI.getCategory()
-//    suspend fun getProductsByCategory(category: String) = fakeStoreAPI.getProductsByCategory(category)
-
+class ApiRepository @Inject constructor (private val newsAPI: NewsAPI) {
+    suspend fun getProductList(accessKey: String,query:String) = newsAPI.getTodaysNews(accessKey,query)
 }

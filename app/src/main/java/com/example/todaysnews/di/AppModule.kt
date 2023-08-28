@@ -1,13 +1,11 @@
 package com.example.weatherapp.di
 
-import com.example.weatherapp.api.WeatherAPI
-import com.example.weatherapp.utils.Constants
-import com.google.firebase.BuildConfig
+import com.example.todaysnews.api.NewsAPI
+import com.example.todaysnews.utils.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -31,6 +29,6 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun getPostRequest(retrofit:Retrofit): WeatherAPI = retrofit.create(WeatherAPI::class.java)
+    fun getPostRequest(retrofit:Retrofit): NewsAPI = retrofit.create(NewsAPI::class.java)
 
 }
